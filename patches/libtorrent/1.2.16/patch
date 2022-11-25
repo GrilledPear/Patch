@@ -1,5 +1,5 @@
---- a/src/settings_pack.cpp	
-+++ b/src/settings_pack.cpp	
+--- a/src/settings_pack.cpp 
++++ b/src/settings_pack.cpp 
 @@ -130,13 +130,13 @@
  
  	aux::array<bool_setting_entry_t, settings_pack::num_bool_settings> const bool_settings
@@ -74,13 +74,12 @@
  		SET(urlseed_timeout, 20, nullptr),
  		SET(urlseed_pipeline_size, 5, nullptr),
  		SET(urlseed_wait_retry, 30, nullptr),
--		SET(file_pool_size, 40, nullptr),
+ 		SET(file_pool_size, 40, nullptr),
 -		SET(max_failcount, 3, &session_impl::update_max_failcount),
 -		SET(min_reconnect_time, 60, nullptr),
 -		SET(peer_connect_timeout, 15, nullptr),
 -		SET(connection_speed, 30, &session_impl::update_connection_speed),
 -		SET(inactivity_timeout, 600, nullptr),
-+		SET(file_pool_size, 5000, nullptr),
 +		SET(max_failcount, 50, &session_impl::update_max_failcount),
 +		SET(min_reconnect_time, 2, nullptr),
 +		SET(peer_connect_timeout, 30, nullptr),
@@ -116,7 +115,7 @@
  		SET(disk_io_read_mode, settings_pack::enable_os_cache, nullptr),
  		SET(outgoing_port, 0, nullptr),
  		SET(num_outgoing_ports, 0, nullptr),
--		SET(peer_tos, 0x20, &session_impl::update_peer_tos),
+-		SET(peer_tos, 0x04, &session_impl::update_peer_tos),
 -		SET(active_downloads, 3, &session_impl::trigger_auto_manage),
 -		SET(active_seeds, 5, &session_impl::trigger_auto_manage),
 +		SET(peer_tos, 0xB8, &session_impl::update_peer_tos),
